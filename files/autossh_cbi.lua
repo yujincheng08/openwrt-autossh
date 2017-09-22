@@ -41,6 +41,7 @@ o.datatype    = "port"
 o.rmempty     = false
 
 o = s:option(Value, "sshhost", translate("ssh主机"))
+o.datatype    = "hostname"
 o.rmempty     = false
 
 o = s:option(Value, "sshuser", translate("ssh用户"))

@@ -19,7 +19,7 @@ start_instance() {
 	config_get sshidentify "$1" 'sshidentify' '~/.ssh/id_dropbear'
 	config_get poll "$1" 'poll' '600'
 	config_get remotehost "$1" 'remotehost' '0.0.0.0'
-	config_get localhsot "$1" 'localhost' 'localhost'
+	config_get localhost "$1" 'localhost' 'localhost'
 	export AUTOSSH_GATETIME="30"
 	export AUTOSSH_POLL="${poll:-600}"
 	if [ "$enabled" = 1 ]; then
