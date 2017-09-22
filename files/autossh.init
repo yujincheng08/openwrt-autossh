@@ -26,7 +26,7 @@ start_instance() {
 		echo ${monitorport:-20000}
 		/usr/sbin/autossh \
 			-M ${monitorport:-20000} \
-			-f -N -R ${remotehost}:${remoteport}:${localhost}:${localport} ${sshuser}@${sshhost} -p ${sshport} -i ${sshidentify}
+			-f -y -N -R ${remotehost}:${remoteport}:${localhost}:${localport} ${sshuser}@${sshhost} -p ${sshport} -i ${sshidentify}
 	fi
 }
 
