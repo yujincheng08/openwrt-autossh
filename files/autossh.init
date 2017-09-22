@@ -13,15 +13,20 @@ start_instance() {
 	config_get localport "$1" 'localport'
 	config_get remoteport "$1" 'remoteport'
 	config_get monitorport "$1" 'monitorport'
-	config_get ssh "$1" 'ssh'
-	config_get poll "$1" 'poll'
+    config_get sshuser "$1" 'sshuser' 'root'
+	config_get sshhost "$1" 'sshhost'
+	config_get sshport "$1" 'sshport' '22'
+	config_get sshidentify "$1" 'sshidentify' '~/.ssh/id_dropbear'
+	config_get poll "$1" 'poll' '600'
+	config_get remotehost "$1" 'remotehost' '0.0.0.0'
+	config_get localhsot "$1" 'localhost' 'localhost'
 	export AUTOSSH_GATETIME="30"
 	export AUTOSSH_POLL="${poll:-600}"
 	if [ "$enabled" = 1 ]; then
 		echo ${monitorport:-20000}
 		/usr/sbin/autossh \
 			-M ${monitorport:-20000} \
-			-f -N -R ${remoteport}:localhost:${localport} ${ssh}
+			-f -N -R ${remotehost}:${remoteport}:${localhost}:${localport} ${sshuser}@${sshhost} -p ${sshport} -i ${sshidentify}
 	fi
 }
 
