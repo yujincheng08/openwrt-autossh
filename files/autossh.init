@@ -16,7 +16,7 @@ start_instance() {
     config_get sshuser "$1" 'sshuser' 'root'
 	config_get sshhost "$1" 'sshhost'
 	config_get sshport "$1" 'sshport' '22'
-	config_get sshidentify "$1" 'sshidentify' '~/.ssh/id_dropbear'
+	config_get sshidentify "$1" 'sshidentify' '~/autoshh/id_rsa'
 	config_get poll "$1" 'poll' '600'
 	config_get remotehost "$1" 'remotehost' '0.0.0.0'
 	config_get localhost "$1" 'localhost' 'localhost'

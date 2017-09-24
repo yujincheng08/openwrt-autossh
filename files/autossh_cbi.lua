@@ -18,7 +18,7 @@ o.rmempty     = false
 
 o = s:option(Value, "localhost", translate("本地主机"))
 o.placeholder = "localhost"
-o.datatype    = "ipaddr"
+o.datatype    = "host"
 o.rmempty     = true
 
 o = s:option(Value, "localport", translate("本地端口"))
@@ -41,7 +41,7 @@ o.datatype    = "port"
 o.rmempty     = false
 
 o = s:option(Value, "sshhost", translate("ssh主机"))
-o.datatype    = "hostname"
+o.datatype    = "host"
 o.rmempty     = false
 
 o = s:option(Value, "sshuser", translate("ssh用户"))
